@@ -54,7 +54,7 @@ function Register(){
         </div>
         <button type="submit" disabled={loading}>Login</button>
         <div className="bottom-text">
-          <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+          <p>have an account? <Link to="/Login">Login</Link></p>
           {/* <p><a href="#">Forgot password?</a></p> */}
         </div>
       </form>

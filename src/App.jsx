@@ -1,5 +1,5 @@
 import {BrowserRouter as Router,Routes,Route } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import { Context, server } from "./main";
@@ -25,6 +25,7 @@ function App() {
       setLoading(false)
       
     }).catch((error)=>{
+      toast.error("Login first")
       setUser({});
       setisAuthenticated(false);
       setLoading(false)
