@@ -20,6 +20,7 @@ function Home() {
   const [friendName, setFriendName] = useState("Friend")
   const [refresh, setRefresh] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [isfriendClick, setisFriendClick] = useState(false)
   const [loading, setLoading] = useState(true)
 
   const { isAuthenticated, user } = useContext(Context);
@@ -50,6 +51,7 @@ function Home() {
 
   // *****************friend Pr click krne par **************************************
   function friendClick(email, name) {
+    setisFriendClick(true)
     setFriendName(name)
     setEmail(email)
     setRefresh(prev => !prev)
@@ -177,7 +179,7 @@ function Home() {
           <Loader/>
         ) : (
           <>
-            <Left friends={friends} friendClick={friendClick} isSearchVisible={isSearchVisible} addFriends={addFriends} toggleSearchVisibility={toggleSearchVisibility} capitalize={capitalize} loading={loading}/>
+            <Left friends={friends} friendClick={friendClick} isSearchVisible={isSearchVisible} addFriends={addFriends} toggleSearchVisibility={toggleSearchVisibility} capitalize={capitalize} loading={loading} friendName={friendName} isfriendClick={isfriendClick}/>
 
             <Right sentMessages={sentMessages} recMessages={recMessages} frndemail={frndemail} capitalize={capitalize} friendName={friendName} handleDeleteFriend={handleDeleteFriend} setText={setText} text={text} sendHandler={sendHandler} />
           </>

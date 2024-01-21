@@ -60,7 +60,7 @@
 
 /* Mobile View Styles */
 @media (max-width: 767px) {
-  .left {
+  .show{
     width: 100%;
     /* Occupy full width in mobile view */
   }

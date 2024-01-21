@@ -6,9 +6,9 @@ import axios from "axios";
 import { BeatLoader, HashLoader } from "react-spinners";
 // import Loader from 'react-loader-spinner'
 
-const Left = ({ friends, friendClick, isSearchVisible, addFriends, toggleSearchVisibility, capitalize }) => {
+const Left = ({ friends, friendClick, isSearchVisible, addFriends, toggleSearchVisibility, capitalize,isfriendClick}) => {
 
-  const [isfriendClick, SetisFriendClick] = useState(false)
+  
   const [search, setSearch] = useState("");
   const [friendData, setfriendData] = useState([]);
   const [loading, setLoading] = useState(false)
@@ -20,13 +20,9 @@ const Left = ({ friends, friendClick, isSearchVisible, addFriends, toggleSearchV
     axios.get(`${server}/friend/search/${search}`, {
       withCredentials: true
     }).then((res) => {
-      // console.log(friendData)
       setfriendData(res.data.Users)
       setLoading(false)
-      // console.log(res.data)
-      // console.log(friendData)
     }).catch((e) => {
-      // console.log(e);
       setLoading(false)
       setfriendData("")
     })
@@ -34,7 +30,7 @@ const Left = ({ friends, friendClick, isSearchVisible, addFriends, toggleSearchV
 
 
   return (
-    <div className={`left ${isfriendClick ? 'block' : 'show'}`}>
+    <div className={`left ${isfriendClick? 'block' : 'show'}`}>
       {/* {console.log(isfriendClick)} */}
       <h1 className='title'>Friends</h1>
 
@@ -43,7 +39,7 @@ const Left = ({ friends, friendClick, isSearchVisible, addFriends, toggleSearchV
         friends?.map((i) => {
           return (
             <div className='friend-list' key={i._id}>
-              <div className='friend' onClick={() => { friendClick(i.email, i.name, i._id), SetisFriendClick(true) }}>
+              <div className='friend' onClick={() => { friendClick(i.email, i.name, i._id)}}>
                 <h3 className='name'>{capitalize(i.name)}</h3>
                 <p className='email' id="friendEmail">{i.email}</p>
               </div>
