@@ -1,0 +1,59 @@
+/* Common Styles for both Desktop and Mobile Views */
+.right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.chat-header {
+  padding: 10px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-btn {
+  background-color: #ff6961;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-header svg {
+  display: none;
+}
+.chat-header .back-btn {
+  border: none;
+}
+
+
+/* Desktop View Styles */
+@media (min-width: 768px) {
+  .right-panel {
+    width: 300px;
+    /* Set a fixed width for the desktop view */
+  }
+
+  .message-input {
+    left: 300px;
+    /* Adjust the left position based on the width of the right panel */
+  }
+}
+
+/* Mobile View Styles */
+@media (max-width: 767px) {
+  .right-panel {
+    width: 100%;
+    /* Occupy full width in mobile view */
+  }
+  .chat-header svg {
+    height: 5vh;
+    display: block;
+    width: 8vw;
+  }
+}

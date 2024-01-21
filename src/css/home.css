@@ -1,0 +1,10 @@
+.home {
+  display: flex;
+  height: 92vh; /* Set the height to full viewport height */
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}

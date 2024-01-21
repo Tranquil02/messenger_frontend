@@ -1,0 +1,80 @@
+.chat-messages {
+    flex: 1; /* Takes remaining space */
+    overflow-y: auto; /* Enable scrolling for messages */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-content{
+    display: flex;
+      flex-direction: column;
+  }
+  .message-content p{
+    padding: 5px 0;
+    font-size: 1.1rem;
+  }
+  .message-content small{
+    font-size: x-small;
+      font-weight: 500;
+      align-self: end;
+  }
+  /* Styles for individual messages */
+  .message {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 70%;
+  }
+  
+  .received {
+    background-color: #e1ffc7;
+    align-self: flex-start;
+  }
+  
+  .sent {
+    background-color: #d2d2d2;
+    align-self: flex-end;
+  }
+  
+  /* Styles for the message input field */
+  .message-input {
+    padding: 10px;
+    display: flex;
+    position: sticky;
+    bottom: 0; /* Stick to the bottom of the .right-panel */
+    background-color: white;
+    border-top: 1px solid #ccc;
+    z-index: 1; /* Ensure the input field is above other content */
+  }
+  
+  .message-input input {
+    width: 91%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .message-input button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  /* ****************** message-date******************* */
+  
+  .message-date {
+    text-align: center;
+      padding: 5px;
+      font-size: medium;
+      margin: 10px 0;
+      background-color: #dcd7d778;
+      color: #524d4d;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+  }
